@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Radio Party TV Online - Transparente Profesional</title>
+    <style>
+        /* Importamos la fuente más gruesa disponible */
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+        /* --- CONFIGURACIÓN PARA FONDO TRANSPARENTE --- */
+        body {
+            margin: 0;
+            /* CAMBIO CLAVE: Fondo transparente */
+            background-color: transparent; 
+            overflow: hidden;
+            font-family: 'Archivo Black', sans-serif;
+        }
+
+        /* --- CONTENEDOR DE LA ESQUINA --- */
+        .corner-logo {
+            position: absolute;
+            top: 50px;
+            right: 60px;
+            display: flex;
+            align-items: center;
+            /* Animación 1: Entrada suave */
+            animation: entradaSutil 1s ease-out forwards;
+            /* Asegurar que el contenedor no tenga fondo */
+            background: transparent; 
+        }
+
+        /* --- EL ICONO ROSA --- */
+        .logo-symbol {
+            width: 80px;  
+            height: 80px;
+            background: #FF007F; /* Rosa Neón */
+            border-radius: 12px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Ajuste de sombra para que sea sutil en cualquier fondo */
+            box-shadow: 0 4px 15px rgba(255, 0, 127, 0.3); 
+            margin-right: 20px;
+            overflow: hidden;
+            /* Animación 2: Pulso de escala constante muy suave */
+            animation: pulsoIcono 3s ease-in-out infinite;
+        }
+
+        .play-shape {
+            width: 0;
+            height: 0;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-left: 30px solid white;
+            margin-left: 6px;
+        }
+
+        /* --- EL TEXTO (TIPOGRAFÍA GRUESA) --- */
+        .text-group {
+            display: flex;
+            flex-direction: column;
+            line-height: 0.8;
+            /* Asegurar legibilidad del texto blanco en fondos claros 
+               añadiendo un sutil borde o sombra de texto */
+        }
+
+        .radio-party {
+            font-size: 42px; 
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            /* Sutil sombra de texto para legibilidad en fondos variados */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .tv-row {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+        }
+
+        .tv-tag {
+            font-size: 70px; /* Ultra gruesa y gigante */
+            color: #FF007F;
+            /* Sutil sombra para dar profundidad en cualquier fondo */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .online-text {
+            font-size: 20px;
+            color: white;
+            margin-left: 15px;
+            background: #FF007F;
+            padding: 4px 12px;
+            border-radius: 4px;
+            /* Animación 3: Parpadeo tipo señal en vivo */
+            animation: parpadeoOnline 1.5s step-end infinite;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* --- ANIMACIONES EN BUCLE --- */
+
+        /* 1. Entrada */
+        @keyframes entradaSutil {
+            0% { transform: translateX(50px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        /* 2. Pulso del icono */
+        @keyframes pulsoIcono {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* 3. Parpadeo Online */
+        @keyframes parpadeoOnline {
+            50% { opacity: 0.3; }
+        }
+
+        /* 4. Brillo que recorre el logo (Cada 5 segundos) */
+        /* Ajustado para ser sutil en fondos transparentes */
+        .brillo-flash {
+            position: absolute;
+            top: 0; left: -150%;
+            width: 60%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transform: skewX(-25deg);
+            animation: barridoLuz 5s infinite;
+            z-index: 10; /* Asegurar que pase por encima */
+        }
+
+        @keyframes barridoLuz {
+            0% { left: -150%; }
+            20% { left: 250%; }
+            100% { left: 250%; }
+        }
+
+        /* 5. EVENTO CADA MINUTO (IMPACTO) */
+        /* Reducimos la intensidad del brillo para que no se vea mal en fondos claros */
+        .master-animator {
+            animation: eventoMinuto 60s infinite;
+        }
+
+        @keyframes eventoMinuto {
+            0%, 98% { filter: brightness(1); }
+            99% { filter: brightness(1.4) contrast(1.1); }
+            100% { filter: brightness(1); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="master-animator">
+        <div class="corner-logo">
+            
+            <div class="brillo-flash"></div>
+
+            <div class="logo-symbol">
+                <div class="play-shape"></div>
+            </div>
+
+            <div class="text-group">
+                <span class="radio-party">RADIO PARTY</span>
+                <div class="tv-row">
+                    <span class="tv-tag">TV</span>
+                    <span class="online-text">ONLINE</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
